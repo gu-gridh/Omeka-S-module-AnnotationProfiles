@@ -33,7 +33,6 @@ class RelatedAnnotatedItems extends AbstractHelper
             throw new \InvalidArgumentException('relatedAnnotatedItems: "relation_property" option is required.');
         }
 
-        $annotationProps = $options['annotation_properties'] ?? null; // null = all
         $resourceType    = $options['resource_type'] ?? 'items';
         $returnScalar    = $options['return_scalar'] ?? false;
 
