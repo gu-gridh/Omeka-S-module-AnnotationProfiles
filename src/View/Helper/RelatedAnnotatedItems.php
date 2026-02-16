@@ -72,16 +72,17 @@ class RelatedAnnotatedItems extends AbstractHelper
 
             $annotation = $value->valueAnnotation();
 
-            $values = $annotation->values();
-            foreach ($values as $term => $propertyData) {
-                $propertyValues = $propertyData['values'];
-                $property = $propertyData['property'];
-                $propertyLabel = $propertyData['alternate_label'] ?: $property->label();
-                foreach ($propertyValues as $value) {
-                    $collected[$propertyLabel][] = $value->value();
+            if ($annotation){
+                $values = $annotation->values();
+                foreach ($values as $term => $propertyData) {
+                    $propertyValues = $propertyData['values'];
+                    $property = $propertyData['property'];
+                    $propertyLabel = $propertyData['alternate_label'] ?: $property->label();
+                    foreach ($propertyValues as $value) {
+                        $collected[$propertyLabel][] = $value->value();
+                    }
                 }
             }
- 
         }
 
     if ($collected !== null) {
