@@ -85,7 +85,7 @@ class RelatedAnnotatedItems extends AbstractHelper
             }
         }
 
-    if ($collected !== null) {
+    if ($collected !== null || $related) {
                 $results[] = [
                     'related'     => $returnScalar ? $related->id() : $related,
                     'annotations' => $collected,
